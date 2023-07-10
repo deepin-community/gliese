@@ -1,0 +1,16 @@
+Changelog: starconvert specification file for Gliese data catalog
+
+version 3-0.95:   take advantage of new starconvert substitution rule to add
+		  less common star names appended after Bayer designations.
+		  add Kapteyn's Star.
+version 3-0.93:	  changed package name to gliese3
+		  take advantage of new starconvert features
+version 3-0.92.1: changed package name to starplot-gliese-3
+		  added debian/ directory and Changelog
+version 3-0.92:   renumbered version to reflect versions of database, StarPlot
+		  added more substitutions for companion stars
+		  added versions of BD designations sans degree ° sign		
+version 1.1:      added more HD number -> Bayer designation substitutions and
+                    also some HD number -> Flamsteed substitutions
+version 1.0:	  original file
+

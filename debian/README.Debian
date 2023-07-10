@@ -1,0 +1,27 @@
+Notes regarding this package
+----------------------------
+
+This package, from version 1.1-13, follows the stardata-common 
+policy. Thus it uses register-stardata to register this catalogue to 
+astronomy programs available in the system, converting this dataset to
+their own data formats and uninstalling them when removing those programs or
+this catalogue.
+
+If an astronomy program is installed that can use the Gliese data,
+register-stardata stores the generated files in /var/lib/<astronomy_package>
+and it makes a symlink to this file from
+/usr/share/<astronomy_package>/gliese.dat,
+removing both when uninstalling this package.
+
+Read more about stardata-common in http://alioth.debian.org/stardata-common
+
+-- Francisco Garcia <franciscomanuel.garcia@hispalinux.es> Fri, 3 Jun 2005 00:30:16 +0200
+
+---------------------------------------------------------
+It can also be used by other astronomical software which can understand
+the 'Standard for Documentation of Astronomical Catalogues' (available at
+several places including http://vizier.u-strasbg.fr/doc/catstd.htx).
+
+-- Javier Fernandez-Sanguino
+Wed, 28 May 2003 16:28:31 +0200
+
