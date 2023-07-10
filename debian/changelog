@@ -1,5 +1,181 @@
-template-repository (1.0-1) unstable; urgency=medium
+gliese (3.0.95-3) unstable; urgency=medium
 
-  * Initial release
+  * debian/control:
+    - Update to Debian Policy 4.6.0.1 (no changes required)
+    - Update to debhelper compability version 13
+    - Change primary maintainer and remove Kevin McCarty from Uploader list
+      (Closes: #869334)
+    - Added package to autobuild and add some headers to keep lintian happy
+  * debian/rules: Simplify debian/rules to use debhelper (Closes: #999146)
+  * debian/source/format: Added as 3.0
+    - Removed the changes to the Makefile (which are not required anyway)
+    - Convert the gliese.spec changes into a patch
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Javier Fernández-Sanguino Peña <jfs@debian.org>  Sun, 27 Mar 2022 20:56:20 +0200
+
+gliese (3.0.95-2) unstable; urgency=low
+
+  * Updated to Debian policy 3.8.4
+  * Added ${misc:Depends} depends to binary package, required by debhelper.
+
+ -- Francisco Manuel Garcia Claramonte <francisco@debian.org>  Thu, 18 Mar 2010 00:20:28 +0100
+
+gliese (3.0.95-1) unstable; urgency=low
+
+  * New upstream release.
+  * Updated to Debian policy 3.8.3
+  * Updated Maintainer control field to @debian.org.
+  * Changed GPL reference to GPL-2 in debian/copyright.
+  * Added Homepage control field.
+  * Cleaned up debian/rules.
+  * Added debian/watch file.
+
+ -- Francisco Manuel Garcia Claramonte <francisco@debian.org>  Sat, 26 Sep 2009 18:22:06 +0200
+
+gliese (1.1-16) unstable; urgency=low
+
+  * Updated to Debian Policy 3.8.0.1
+  * Updated depends control field from debhelper version 5 to 7.
+  * Modified debian/compat debhelper compatibility file to 7.
+  * Changed debian/rules install target to avoid a lintian warning.
+  * Changed debian/copyright to fix the .spec and Makefile license.
+
+ -- Francisco Garcia <franciscomanuel.garcia@hispalinux.es>  Fri, 06 Feb 2009 00:44:33 +0100
+
+gliese (1.1-15) unstable; urgency=low
+
+  * No longer install gliese.spec; a newer version is installed elsewhere
+    (and has been for some time) by the starplot package.
+
+ -- Kevin B. McCarty <kmccarty@debian.org>  Fri, 11 Apr 2008 09:20:08 -0700
+
+gliese (1.1-14) unstable; urgency=low
+
+  * Updated to Debian Policy 3.7.3
+  * Modified long description control field. Removed the spacechart
+    reference.
+  * Modified debian/rules clean process to catch error messages from
+    the clean or distclean rules.
+  * Modified the Build-Depends-Indep to Build-Depends control field.
+
+ -- Francisco Garcia <franciscomanuel.garcia@hispalinux.es>  Sun, 10 Feb 2008 19:12:06 +0100
+
+gliese (1.1-13) unstable; urgency=low
+
+  * Changed the postinst and prerm scripts files according to stardata-common
+    policy.
+  * Added suggests relationship with stardata-common package and gliese-viewer
+    virtual package.
+  * Changed the extended description field in debian/control file.
+  * Updated to Debian Policy 3.6.2.1
+
+ -- Francisco Garcia <franciscomanuel.garcia@hispalinux.es>  Fri,  3 Jun 2005 00:31:49 +0200
+
+gliese (1.1-12) unstable; urgency=low
+
+  * New postinst change _really_ fixing the "upgrade when a symlink exists"
+    problem.
+  * Small changes to the postinst to make it more readable.
+
+ -- Javier Fernandez-Sanguino Pen~a <jfs@computer.org>  Wed,  8 Sep 2004 09:04:40 +0200
+
+gliese (1.1-11) unstable; urgency=low
+
+  [ As suggested by Kevin B. McCarty ]
+  * Adjusted postinst so that the target file is removed even if it's
+    a symlink to avoid the postinst from breaking in some upgrades.
+  * Removed trailing / in the OUTFILE definition
+
+ -- Javier Fernandez-Sanguino Pen~a <jfs@computer.org>  Mon,  6 Sep 2004 23:38:44 +0200
+
+gliese (1.1-10) unstable; urgency=low
+
+  * Fixed postinst code so that it will behave properly when installing
+    spacechart or starplot versions that do _not_ have /var/lib/ directories.
+
+ -- Javier Fernandez-Sanguino Pen~a <jfs@computer.org>  Sun,  5 Sep 2004 10:35:35 +0200
+
+gliese (1.1-9) unstable; urgency=low
+
+  * New maintainer, I'm setting myself as co-maintainer (Closes: #216878)
+  * Change perl check to -x check of the gliese2spacechart script
+  (so it can be written in other programming languages in the future)
+  * Fix postinst removing uneeded comments and coping with the fact that the
+    copyright warning might need to indicate more than one file. Also,
+    fix file locations (/usr/share has symlinks to files at /var/lib)
+  * Use gliese2spacechart (no .pl) and check if the output directory
+    exists before running the script
+  * Simplify removal process and take into account starplot symlinks
+  (might appear in some versions)
+
+ -- Javier Fernandez-Sanguino Pen~a <jfs@computer.org>  Fri,  3 Sep 2004 23:12:00 +0200
+
+gliese (1.1-8) unstable; urgency=low
+
+  * In postinst script converts the catalogue to spacechart data format
+    if it is installed.
+  * Changed the Section field in debian/control to non-free/science
+  * Updated to Debian Policy 3.6.1
+  * Cleanup the unused calls in rules file
+  * Added the GPL file location to copyright
+  * Removed the INSTALL file from docs, unneeded in the
+    binary package
+  * Declared the Build-Depends-Indep control file field
+
+ -- Francisco Garcia <franciscomanuel.garcia@hispalinux.es>  Mon, 26 Apr 2004 23:58:36 +0200
+
+gliese (1.1-7) unstable; urgency=low
+
+  * Added Build-Depends (Closes: #260008)
+
+ -- Javier Fernandez-Sanguino Pen~a <jfs@computer.org>  Sun, 18 Jul 2004 12:07:39 +0200
+
+gliese (1.1-6) unstable; urgency=low
+
+  * Fixed postinst so that the 'which' call does not break it
+    (should have know that this was going to happen due to the
+    set -e)
+  * Changed installation to /usr/share/stardata (that's where
+    starplot looks it in)
+
+ -- Javier Fernandez-Sanguino Pen~a <jfs@computer.org>  Thu, 29 May 2003 12:59:47 +0200
+
+gliese (1.1-5) unstable; urgency=low
+
+  * No longer depends on starplot being available, starconvert is
+    only run if it exists.
+  * No longer Depends: on starplot but Recommends: it
+  * TODO: Move data files from /usr/share/starplot to some common
+    place for all astronomical software (/usr/share/star-catalogue?)
+  * Updated Standards-Version
+  * Removed references to starplot-gliese-333 and changed them to just 'gliese'
+
+ -- Javier Fernandez-Sanguino Pen~a <jfs@computer.org>  Thu, 29 May 2003 10:34:38 +0200
+
+gliese (1.1-4) unstable; urgency=low
+
+  * Modifed debian/copyright
+       - Tried to clarify the issue better
+       - Added pointers to alternative locations (NASA has suspended ADS)
+  * Added more information on README.Debian and debian/control on
+     why it depends on starplot
+
+ -- Javier Fernandez-Sanguino Pen~a <jfs@computer.org>  Wed, 28 May 2003 16:10:59 +0200
+
+gliese (1.1-3) unstable; urgency=low
+
+  * Fixed description (Closes: #124677)
+
+ -- Javier Fernandez-Sanguino Pen~a <jfs@computer.org>  Tue,  3 Dec 2002 21:39:08 +0100
+
+gliese (1.1-2) unstable; urgency=low
+
+  * Information for the starplot package is not made after installation (Closes: #108447)
+
+ -- Javier Fernandez-Sanguino Pen~a <jfs@computer.org>  Wed, 15 Aug 2001 16:39:04 +0200
+
+gliese (1.1-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Javier Fernandez-Sanguino Pen~a <jfs@computer.org>  Tue, 13 Mar 2001 01:28:57 +0100

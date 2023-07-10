@@ -1,0 +1,9 @@
+To install this data set, you will need to have StarPlot and the accompanying
+utility program, starconvert, already installed.  Then simply execute the
+following commands (as root, if necessary):
+
+cd gliese3-0.93
+starpkg --dataset . --dest /usr/local/share/stardata
+
+(change the last argument to wherever you want to put the StarPlot data file)
+

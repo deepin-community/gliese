@@ -1,0 +1,37 @@
+This is a stellar data set for use by the StarPlot program.  You will need
+to have StarPlot already installed in order to install this data set.
+To download StarPlot, see the web page at http://www.starplot.org
+or, if you are using Debian or a compatible system: apt-get install starplot
+
+This directory should include the following files:
+
+	README		This file.
+	INSTALL		Instructions for installing this data set.
+	COPYING		Information about the copyright of this data set.
+	Changelog	History of the StarPlot incarnation of this data set.
+	gliese3.spec	Specification of original data file format.
+	orig-data/	Contains the unmodified data from the ADC archives.
+	debian/		Control information for building a Debian package.
+
+These data come from the Third Catalogue of Nearby Stars (preliminary
+edition), Gliese and Jahreiss, 1991, which is located in the file
+orig-data/catalog.dat and has an accompanying description in orig-data/ReadMe.
+A StarPlot-readable file, gliese3.stars, will be automatically generated from
+catalog.dat by starconvert, a conversion program, at install time.
+After conversion, the file will contain approximately 3800 star records
+including the known stars nearer to Earth than approximately 80 light-years.
+
+The data set was obtained from the archives of the Astronomical Data
+Center (ADC) at NASA Goddard Space Flight Center.  These archives are available
+to the public at http://adc.gsfc.nasa.gov.
+
+COPYRIGHT NOTE
+
+It is safe to redistribute the files in the orig-data directory,
+which, as noted above, are freely available on the Astronomical Data Center
+web site.  However, since these are copyrighted data, you may NOT redistribute
+modified versions of them.  This is why I have the StarPlot-format data files,
+*.stars, generated at install time instead of being available for download.
+I would advise that you NOT redistribute these *.stars data files.  See the 
+file COPYING for more information.
+
